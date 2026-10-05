@@ -1,57 +1,75 @@
 /**
  * Editorial Huapango - Production Client Logic
- * Lightweight, zero-dependency, ultra-fast performance
+ * Basado al 100% en el Dossier Oficial de Editorial Huapango (Canva)
+ * Zero-dependency, ultra-fast performance
  */
 
-// Book Catalog Data for interactive previews
+// Datos oficiales extraídos directamente del Dossier Editorial Huapango
 const CATALOG = {
   nahual: {
     title: 'Nahual',
     author: 'Luis Armando Rosado',
     genre: 'Realismo Mágico / Colección Raíces No. 01',
-    price: '$180 MXN',
-    pages: '144 páginas',
-    isbn: '978-607-99120-0-4',
-    format: 'Bolsillo (11 × 17 cm) • Bond Crema 70g',
-    digitalAvailable: true,
-    synopsis: 'Una inmersión al misticismo del monte fronterizo tamaulipeco. Nahual desentierra los relatos ancestrales de transmutación y supervivencia que habitan las márgenes del río Bravo, donde lo humano y la bestia conviven en una tensa tregua poética.',
+    price: '$250 MXN',
+    cover: './books/portada-nahual.jpg',
+    coverPng: './books/portada-nahual.png',
+    dimensions: '18.00 × 12.50 cm',
+    weight: '153 gr',
+    paper: 'Bond crema 70 grs',
+    binding: 'Cubierta flexible de bolsillo',
+    publishDate: '23 de abril de 2026',
+    videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
+    synopsis: 'Un cuento largo de comedy horror donde un nahual pone de cabeza al pueblo al darle caza. Una inmersión al misticismo del monte fronterizo y la transmutación humana donde las criaturas míticas desafían el orden cotidiano del noreste.',
     quote: '«El murmullo del río no era agua, sino palabras que nadie se atrevió a imprimir...»'
   },
   terregal: {
-    title: 'Terregal',
-    author: 'Armando Rosado & Eduardo Serrato',
-    genre: 'Mexa-ficción / Frontera Viva No. 02',
-    price: '$190 MXN',
-    pages: '168 páginas',
-    isbn: '978-607-99120-1-1',
-    format: 'Bolsillo (11 × 17 cm) • Bond Crema 70g',
-    digitalAvailable: true,
-    synopsis: 'Ficción especulativa desde las entrañas del desierto. Terregal relata historias cruzadas en una Reynosa distópica donde las tolvaneras borran las memorias colectivas y los habitantes reinventan su lenguaje para no ser devorados por el silencio.',
+    title: 'Terregal: Entre este & los próximos mil años',
+    author: 'Eduardo Serrato & Luis Armando Rosado',
+    genre: 'Mexa-ficción / Ficción Especulativa No. 02',
+    price: '$250 MXN',
+    cover: './books/portada-terregal.jpg',
+    coverPng: './books/portada-terregal.png',
+    dimensions: '18.00 × 12.50 cm',
+    weight: '176 gr',
+    paper: 'Bond crema 70 grs',
+    binding: 'Cubierta flexible de bolsillo',
+    publishDate: '23 de abril de 2026',
+    prologue: 'Prólogo de Renato Tinajero',
+    videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
+    synopsis: 'El uróboros contemporáneo: una coautoría de 100 cuentos cortos de mexa-ficción donde el sarcasmo protagoniza en todo momento este imaginario retrofuturista del desierto norestense.',
     quote: '«El polvo no ensucia: edifica la arqueología de los que nos quedamos a resistir.»'
   },
   imaginar: {
     title: 'Todo Lo Que Puedas Imaginar',
     author: 'Vanessa Aranda',
-    genre: 'Cuento Infantil Ilustrado / Colección Semillas No. 03',
-    price: '$160 MXN',
-    pages: '64 páginas a color',
-    isbn: '978-607-99120-2-8',
-    format: 'Bolsillo Infantil • Couché mate 130g',
-    digitalAvailable: true,
-    synopsis: 'Una travesía lúdica sobre la creatividad de las infancias en el norte. A través de ilustraciones sensibles y texto rimado, la autora invita a niñas y niños a descubrir que el desierto florece cada vez que un sueño se dibuja.',
-    quote: '«Si cierras los ojos, el viento te presta alas de mariposa monarca.»'
+    genre: 'Cuentos a todas partes / Infantil & Juvenil No. 03',
+    price: '$150 MXN',
+    cover: './books/portada-todo-lo-que-puedas-imaginar.jpg',
+    coverPng: './books/portada-todo-lo-que-puedas-imaginar.png',
+    dimensions: '18.00 × 12.50 cm',
+    weight: '110 gr',
+    paper: 'Bond crema 70 grs',
+    binding: 'Cubierta flexible de bolsillo',
+    publishDate: '23 de abril de 2026',
+    videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
+    synopsis: 'Una guía escondida entre las páginas donde niños y grandes se sientan a leer y encuentran en sus líneas un recordatorio lúdico del poder inagotable de soñar desde cualquier rincón.',
+    quote: '«Si cierras los ojos, el viento te presta alas para reinventar el horizonte.»'
   },
   renacer: {
     title: 'Renacer en Piel del Tiempo',
     author: 'Ángelus',
-    genre: 'Poesía Contemporánea / Lira Norteña No. 04',
-    price: '$170 MXN',
-    pages: '112 páginas',
-    isbn: '978-607-99120-3-5',
-    format: 'Bolsillo (11 × 17 cm) • Bond Crema 70g',
-    digitalAvailable: true,
-    synopsis: 'Un poemario íntimo y desgarrador sobre el paso de las horas, las heridas de la piel y la persistencia de la ternura en tiempos convulsos. Versos concisos que respiran al ritmo del desierto y la noche tamaulipeca.',
-    quote: '«Nombrar la herida es el primer paso para convertirla en canto.»'
+    genre: 'Poesía Contemporánea / Poesía de lo cotidiano No. 04',
+    price: '$250 MXN',
+    cover: './books/portada-renacer-en-piel-del-tiempo.jpg',
+    coverPng: './books/portada-renacer-en-piel-del-tiempo.png',
+    dimensions: '18.00 × 12.50 cm',
+    weight: 'Formato ligero',
+    paper: 'Bond crema 70 grs',
+    binding: 'Cubierta flexible de bolsillo',
+    publishDate: '23 de abril de 2026',
+    videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
+    synopsis: 'Poemario íntimo que reencuentra al lector con su propia vida. Versos que caminan sobre la piel de la memoria cotidiana, capturando la belleza y la fragilidad del tiempo.',
+    quote: '«Nombrar la herida es el primer paso para convertirla en canto vivo.»'
   }
 };
 
@@ -91,12 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
 
-    // Close on navigation link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => toggleMobileMenu(false));
     });
 
-    // Close on Escape key
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileMenuBtn.getAttribute('aria-expanded') === 'true') {
         toggleMobileMenu(false);
@@ -104,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Scroll Reveal Animations (IntersectionObserver with passive observation)
+  // 3. Scroll Reveal Animations (IntersectionObserver)
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -115,44 +131,62 @@ document.addEventListener('DOMContentLoaded', () => {
   }, {
     root: null,
     rootMargin: '0px 0px -40px 0px',
-    threshold: 0.1
+    threshold: 0.08
   });
 
   document.querySelectorAll('.fade-up').forEach(el => {
     revealObserver.observe(el);
   });
 
-  // 4. Interactive Book Modal
+  // 4. Interactive Book Modal con Datos Oficiales
   const modalBackdrop = document.getElementById('bookModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalTitle = document.getElementById('modalBookTitle');
   const modalAuthor = document.getElementById('modalBookAuthor');
   const modalGenre = document.getElementById('modalBookGenre');
   const modalPrice = document.getElementById('modalBookPrice');
-  const modalPages = document.getElementById('modalBookPages');
-  const modalIsbn = document.getElementById('modalBookIsbn');
-  const modalFormat = document.getElementById('modalBookFormat');
+  const modalDimensions = document.getElementById('modalBookDimensions');
+  const modalWeight = document.getElementById('modalBookWeight');
+  const modalBinding = document.getElementById('modalBookBinding');
+  const modalPublishDate = document.getElementById('modalBookPublishDate');
   const modalSynopsis = document.getElementById('modalBookSynopsis');
   const modalQuote = document.getElementById('modalBookQuote');
+  const modalCover = document.getElementById('modalBookCover');
   const modalWaLink = document.getElementById('modalWaLink');
+  const modalVideoLink = document.getElementById('modalVideoLink');
 
   function openBookModal(bookKey) {
     const data = CATALOG[bookKey];
     if (!data || !modalBackdrop) return;
 
     if (modalTitle) modalTitle.textContent = data.title;
-    if (modalAuthor) modalAuthor.textContent = data.author;
+    if (modalAuthor) modalAuthor.textContent = `Por ${data.author}`;
     if (modalGenre) modalGenre.textContent = data.genre;
     if (modalPrice) modalPrice.textContent = data.price;
-    if (modalPages) modalPages.textContent = data.pages;
-    if (modalIsbn) modalIsbn.textContent = `ISBN: ${data.isbn}`;
-    if (modalFormat) modalFormat.textContent = data.format;
+    if (modalDimensions) modalDimensions.textContent = data.dimensions;
+    if (modalWeight) modalWeight.textContent = data.weight;
+    if (modalBinding) modalBinding.textContent = data.binding;
+    if (modalPublishDate) modalPublishDate.textContent = data.publishDate;
     if (modalSynopsis) modalSynopsis.textContent = data.synopsis;
     if (modalQuote) modalQuote.textContent = data.quote;
+    
+    if (modalCover) {
+      modalCover.src = data.cover;
+      modalCover.alt = `Portada oficial de ${data.title}`;
+    }
 
-    // Generate WhatsApp direct order link
+    if (modalVideoLink) {
+      if (data.videoUrl) {
+        modalVideoLink.href = data.videoUrl;
+        modalVideoLink.classList.remove('hidden');
+      } else {
+        modalVideoLink.classList.add('hidden');
+      }
+    }
+
+    // Direct WhatsApp order link con mensaje personalizado
     if (modalWaLink) {
-      const waMsg = encodeURIComponent(`Hola Editorial Huapango, deseo adquirir una copia del libro "${data.title}" (${data.author}). ¿Me podrían brindar detalles de pago y envío?`);
+      const waMsg = encodeURIComponent(`Hola Editorial Huapango, me interesa adquirir un ejemplar del libro "${data.title}" de ${data.author} ($${data.price}). ¿Podrían darme los pasos de compra y envío?`);
       modalWaLink.href = `https://wa.me/528994112236?text=${waMsg}`;
     }
 
@@ -171,6 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const bookKey = trigger.getAttribute('data-book-target');
       openBookModal(bookKey);
+    });
+
+    // Accesibilidad con teclado Enter/Espacio
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const bookKey = trigger.getAttribute('data-book-target');
+        openBookModal(bookKey);
+      }
     });
   });
 
