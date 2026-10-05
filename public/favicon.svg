@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#141413"/>
+  <rect x="3" y="3" width="58" height="58" rx="11" stroke="#C05A3E" stroke-width="2" stroke-opacity="0.6"/>
+  <!-- Monogram H -->
+  <text x="50%" y="54%" dominant-baseline="central" text-anchor="middle" font-family="'Cinzel', 'Newsreader', Georgia, serif" font-weight="700" font-size="34" fill="#FDFBF7">H</text>
+  <!-- Subtle wax dot -->
+  <circle cx="48" cy="46" r="3.5" fill="#C05A3E"/>
+</svg>
