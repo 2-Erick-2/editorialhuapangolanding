@@ -9,67 +9,72 @@ const CATALOG = {
   nahual: {
     title: 'Nahual',
     author: 'Luis Armando Rosado',
-    genre: 'Realismo Mágico / Colección Raíces No. 01',
+    genre: 'Realismo Mágico • Colección Raíces',
     price: '$250 MXN',
     cover: './books/portada-nahual.jpg',
-    coverPng: './books/portada-nahual.png',
+    coverWebp: './books/portada-nahual.webp',
     dimensions: '18.00 × 12.50 cm',
-    weight: '153 gr',
-    paper: 'Bond crema 70 grs',
+    weight: '153 g',
+    paper: 'Bond crema 70 g',
     binding: 'Cubierta flexible de bolsillo',
     publishDate: '23 de abril de 2026',
+    mlUrl: 'https://www.mercadolibre.com.mx/nahual--luis-armando-rosado--editorial-huapango/up/MLMU4103853249?pdp_filters=seller_id%3A2478697092',
     videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
-    synopsis: 'Un cuento largo de comedy horror donde un nahual pone de cabeza al pueblo al darle caza. Una inmersión al misticismo del monte fronterizo y la transmutación humana donde las criaturas míticas desafían el orden cotidiano del noreste.',
-    quote: '«El murmullo del río no era agua, sino palabras que nadie se atrevió a imprimir...»'
+    synopsis: 'Un cuento largo de comedy horror donde un nahual pone de cabeza al pueblo al darle caza. Una inmersión en el misticismo del monte fronterizo y la transmutación humana donde las criaturas míticas desafían el orden cotidiano del noreste.',
+    quote: '«Fue Miguel, el hijo de Atilano el que lo vio primero. Algo parecido a un perro, bebía embelesado la tibia sangre encharcada dentro de la panza de un becerro.»'
   },
   terregal: {
     title: 'Terregal: Entre este & los próximos mil años',
     author: 'Eduardo Serrato & Luis Armando Rosado',
-    genre: 'Mexa-ficción / Ficción Especulativa No. 02',
+    genre: 'Mexa-ficción norestense • Colección Raíces',
     price: '$250 MXN',
     cover: './books/portada-terregal.jpg',
-    coverPng: './books/portada-terregal.png',
+    coverWebp: './books/portada-terregal.webp',
     dimensions: '18.00 × 12.50 cm',
-    weight: '176 gr',
-    paper: 'Bond crema 70 grs',
+    weight: '176 g',
+    paper: 'Bond crema 70 g',
     binding: 'Cubierta flexible de bolsillo',
     publishDate: '23 de abril de 2026',
     prologue: 'Prólogo de Renato Tinajero',
+    mlUrl: 'https://www.mercadolibre.com.mx/terregal-entre-este-y-los-proximos-mil-anos/up/MLMU4172477919?pdp_filters=seller_id%3A2478697092',
     videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
     synopsis: 'El uróboros contemporáneo: una coautoría de 100 cuentos cortos de mexa-ficción donde el sarcasmo protagoniza en todo momento este imaginario retrofuturista del desierto norestense.',
-    quote: '«El polvo no ensucia: edifica la arqueología de los que nos quedamos a resistir.»'
+    quote: '«¿Qué polvo se levanta si agitamos las páginas del sinsentido entre pasado y futuro?»'
   },
   imaginar: {
-    title: 'Todo Lo Que Puedas Imaginar',
+    title: 'Todo lo que puedas imaginar',
+    hashtag: '#TPi',
     author: 'Vanessa Aranda',
-    genre: 'Cuentos a todas partes / Infantil & Juvenil No. 03',
+    genre: 'Infantil • Cuentos a todas partes',
     price: '$150 MXN',
     cover: './books/portada-todo-lo-que-puedas-imaginar.jpg',
-    coverPng: './books/portada-todo-lo-que-puedas-imaginar.png',
+    coverWebp: './books/portada-todo-lo-que-puedas-imaginar.webp',
     dimensions: '18.00 × 12.50 cm',
-    weight: '110 gr',
-    paper: 'Bond crema 70 grs',
+    weight: '110 g',
+    paper: 'Bond crema 70 g',
     binding: 'Cubierta flexible de bolsillo',
     publishDate: '23 de abril de 2026',
+    mlUrl: 'https://www.mercadolibre.com.mx/todo-lo-que-puedas-imaginar-cuentos-a-todas-partes/up/MLMU4190757094?pdp_filters=seller_id%3A2478697092',
     videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
     synopsis: 'Una guía escondida entre las páginas donde niños y grandes se sientan a leer y encuentran en sus líneas un recordatorio lúdico del poder inagotable de soñar desde cualquier rincón.',
-    quote: '«Si cierras los ojos, el viento te presta alas para reinventar el horizonte.»'
+    quote: '«Una invitación a quedarnos con la mejor versión de nuestra imaginación.»'
   },
   renacer: {
-    title: 'Renacer en Piel del Tiempo',
+    title: 'Renacer en piel del tiempo',
     author: 'Ángelus',
-    genre: 'Poesía Contemporánea / Poesía de lo cotidiano No. 04',
+    genre: 'Poesía contemporánea • Colección Raíces',
     price: '$250 MXN',
     cover: './books/portada-renacer-en-piel-del-tiempo.jpg',
-    coverPng: './books/portada-renacer-en-piel-del-tiempo.png',
+    coverWebp: './books/portada-renacer-en-piel-del-tiempo.webp',
     dimensions: '18.00 × 12.50 cm',
     weight: 'Formato ligero',
-    paper: 'Bond crema 70 grs',
+    paper: 'Bond crema 70 g',
     binding: 'Cubierta flexible de bolsillo',
     publishDate: '23 de abril de 2026',
+    mlUrl: 'https://www.mercadolibre.com.mx/renacer-en-piel-del-tiempo-poesia-de-lo-cotidiano/up/MLMU4190729604?pdp_filters=seller_id%3A2478697092',
     videoUrl: 'https://youtu.be/NWZO-iJArZs?si=C-PgVdboNMJFdN5F',
     synopsis: 'Poemario íntimo que reencuentra al lector con su propia vida. Versos que caminan sobre la piel de la memoria cotidiana, capturando la belleza y la fragilidad del tiempo.',
-    quote: '«Nombrar la herida es el primer paso para convertirla en canto vivo.»'
+    quote: '«No es necesario que arda toda la noche, basta con que encienda lo suficiente para recordarnos que la vida pese a sus sombras sigue siendo habitable.»'
   }
 };
 
@@ -142,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBackdrop = document.getElementById('bookModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalTitle = document.getElementById('modalBookTitle');
+  const modalHashtag = document.getElementById('modalBookHashtag');
   const modalAuthor = document.getElementById('modalBookAuthor');
   const modalGenre = document.getElementById('modalBookGenre');
   const modalPrice = document.getElementById('modalBookPrice');
@@ -152,7 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalSynopsis = document.getElementById('modalBookSynopsis');
   const modalQuote = document.getElementById('modalBookQuote');
   const modalCover = document.getElementById('modalBookCover');
-  const modalWaLink = document.getElementById('modalWaLink');
+  const modalCoverWebp = document.getElementById('modalBookCoverWebp');
+  const modalBuyLink = document.getElementById('modalBuyLink');
   const modalVideoLink = document.getElementById('modalVideoLink');
 
   function openBookModal(bookKey) {
@@ -160,6 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!data || !modalBackdrop) return;
 
     if (modalTitle) modalTitle.textContent = data.title;
+    if (modalHashtag) {
+      modalHashtag.textContent = data.hashtag || '';
+      modalHashtag.classList.toggle('hidden', !data.hashtag);
+    }
     if (modalAuthor) modalAuthor.textContent = `Por ${data.author}`;
     if (modalGenre) modalGenre.textContent = data.genre;
     if (modalPrice) modalPrice.textContent = data.price;
@@ -170,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalSynopsis) modalSynopsis.textContent = data.synopsis;
     if (modalQuote) modalQuote.textContent = data.quote;
     
+    if (modalCoverWebp) modalCoverWebp.srcset = data.coverWebp;
     if (modalCover) {
       modalCover.src = data.cover;
       modalCover.alt = `Portada oficial de ${data.title}`;
@@ -184,10 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Direct WhatsApp order link con mensaje personalizado
-    if (modalWaLink) {
-      const waMsg = encodeURIComponent(`Hola Editorial Huapango, me interesa adquirir un ejemplar del libro "${data.title}" de ${data.author} ($${data.price}). ¿Podrían darme los pasos de compra y envío?`);
-      modalWaLink.href = `https://wa.me/528994112236?text=${waMsg}`;
+    // Compra directa en la publicación de Mercado Libre de cada libro
+    if (modalBuyLink && data.mlUrl) {
+      modalBuyLink.href = data.mlUrl;
     }
 
     modalBackdrop.classList.add('open');
