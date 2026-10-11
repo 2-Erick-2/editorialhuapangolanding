@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es-MX" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <!-- Primary Meta Tags -->
   <title>Editorial Huapango | Literatura del Noreste Contemporáneo</title>
-  <meta name="title" content="Editorial Huapango | Literatura del Noreste Contemporáneo">
+  <!-- Marca que el JS está activo (las animaciones de entrada solo ocultan contenido con JS) -->
+  <script>document.documentElement.classList.add('js')</script>
+
+  <!-- Primary Meta Tags -->
   <meta name="description" content="Editorial Huapango: editorial mexicana independiente en Cd. Reynosa, Tamaulipas. Obras literarias originales, traducciones universales, formato de bolsillo uniforme y ecosistema cultural del noreste mexicano.">
-  <meta name="keywords" content="Editorial Huapango, literatura mexicana, noreste contemporáneo, libros de bolsillo, Reynosa, Tamaulipas, Luis Armando Rosado, Eduardo Serrato, Nahual, Terregal, poesía, cultura, libros independientes">
   <meta name="author" content="Editorial Huapango">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#141413">
-  <link rel="canonical" href="https://editorialhuapango.com/">
+  <link rel="canonical" href="%VITE_SITE_URL%/">
 
   <!-- Geo Meta Tags -->
   <meta name="geo.region" content="MX-TAM">
@@ -21,32 +20,29 @@
   <meta name="geo.position" content="26.0444;-98.2987">
   <meta name="ICBM" content="26.0444, -98.2987">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://editorialhuapango.com/">
+  <meta property="og:url" content="%VITE_SITE_URL%/">
   <meta property="og:site_name" content="Editorial Huapango">
   <meta property="og:title" content="Editorial Huapango | Ecosistema de Pensamiento y Literatura Independiente">
   <meta property="og:description" content="Somos más que una editorial, somos un ecosistema de pensamiento y literatura independiente del noreste mexicano. Catálogo de bolsillo, poesía, mexa-ficción y cultura viva desde Reynosa.">
-  <meta property="og:image" content="./logo-editorial-huapango.png">
-  <meta property="og:image:alt" content="Logotipo Oficial de Editorial Huapango">
+  <meta property="og:image" content="%VITE_SITE_URL%/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Editorial Huapango: #siemprecuenta y portadas del catálogo">
   <meta property="og:locale" content="es_MX">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://editorialhuapango.com/">
   <meta name="twitter:title" content="Editorial Huapango | Literatura del Noreste Contemporáneo">
   <meta name="twitter:description" content="Editorial mexicana independiente fundada en Reynosa, Tamaulipas. Libros de bolsillo, literatura de valor permanente y ecosistema cultural.">
-  <meta name="twitter:image" content="./logo-editorial-huapango.png">
+  <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.jpg">
 
   <!-- Favicon and App Manifest -->
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="apple-touch-icon" href="./favicon.svg">
-
-  <!-- DNS Prefetch & Font Preconnect for Instant Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
 
   <!-- CSS & JS Assets (Compiled by Vite) -->
   <link rel="stylesheet" href="./src/styles/main.css">
@@ -59,13 +55,12 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://editorialhuapango.com/#organization",
+        "@id": "%VITE_SITE_URL%/#organization",
         "name": "Editorial Huapango",
-        "alternateName": "Huapango Ediciones",
-        "url": "https://editorialhuapango.com/",
+        "url": "%VITE_SITE_URL%/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://editorialhuapango.com/logo-editorial-huapango.png",
+          "url": "%VITE_SITE_URL%/logo-editorial-huapango.png",
           "caption": "Editorial Huapango"
         },
         "description": "Editorial mexicana independiente fundada en Cd. Reynosa, Tamaulipas. Obras literarias originales, traducciones universales, catálogo de bolsillo uniforme y ecosistema cultural.",
@@ -91,31 +86,32 @@
           "availableLanguage": ["Spanish"]
         },
         "sameAs": [
-          "https://editorialhuapango.com",
-          "https://instagram.com/editorialhuapango",
-          "https://facebook.com/editorialhuapango",
+          "https://www.instagram.com/editorial_huapango/",
+          "https://www.facebook.com/p/Editorial-Huapango-61581337876943/",
           "https://www.youtube.com/@EditorialHuapangoOficial"
         ]
       },
       {
         "@type": "WebSite",
-        "@id": "https://editorialhuapango.com/#website",
-        "url": "https://editorialhuapango.com/",
+        "@id": "%VITE_SITE_URL%/#website",
+        "url": "%VITE_SITE_URL%/",
         "name": "Editorial Huapango",
         "publisher": {
-          "@id": "https://editorialhuapango.com/#organization"
+          "@id": "%VITE_SITE_URL%/#organization"
         },
         "inLanguage": "es-MX"
       },
       {
         "@type": "ItemList",
-        "@id": "https://editorialhuapango.com/#catalogo",
+        "@id": "%VITE_SITE_URL%/#catalogo",
         "name": "Catálogo Oficial de Libros de Bolsillo - Editorial Huapango",
         "itemListElement": [
           {
             "@type": "Book",
             "position": 1,
             "name": "Nahual",
+            "image": "%VITE_SITE_URL%/books/portada-nahual.jpg",
+            "publisher": { "@id": "%VITE_SITE_URL%/#organization" },
             "author": {
               "@type": "Person",
               "name": "Luis Armando Rosado"
@@ -136,6 +132,8 @@
             "@type": "Book",
             "position": 2,
             "name": "Terregal: Entre este & los próximos mil años",
+            "image": "%VITE_SITE_URL%/books/portada-terregal.jpg",
+            "publisher": { "@id": "%VITE_SITE_URL%/#organization" },
             "author": [
               {
                 "@type": "Person",
@@ -162,6 +160,8 @@
             "@type": "Book",
             "position": 3,
             "name": "Todo lo que puedas imaginar",
+            "image": "%VITE_SITE_URL%/books/portada-todo-lo-que-puedas-imaginar.jpg",
+            "publisher": { "@id": "%VITE_SITE_URL%/#organization" },
             "author": {
               "@type": "Person",
               "name": "Vanessa Aranda"
@@ -182,6 +182,8 @@
             "@type": "Book",
             "position": 4,
             "name": "Renacer en piel del tiempo",
+            "image": "%VITE_SITE_URL%/books/portada-renacer-en-piel-del-tiempo.jpg",
+            "publisher": { "@id": "%VITE_SITE_URL%/#organization" },
             "author": {
               "@type": "Person",
               "name": "Ángelus"
@@ -219,11 +221,11 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
       
       <!-- Logo Oficial con Img Local y Fallback -->
-      <a href="#" class="group flex items-center gap-3.5 focus:outline-none focus:ring-2 focus:ring-terregal-500 rounded p-1" aria-label="Editorial Huapango - Inicio">
+      <a href="#" class="group flex items-center gap-3.5 focus:outline-none focus:ring-2 focus:ring-terregal-500 rounded p-1">
         <div class="flex items-center gap-3.5">
           <img 
             src="./logo-editorial-huapango.svg"
-            alt="Editorial Huapango - Literatura del Noreste"
+            alt="Editorial Huapango, ir al inicio"
             class="h-8 md:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             width="179"
             height="50"
@@ -296,7 +298,7 @@
       
       <!-- Fondo estético con inicial 'H' litográfica -->
       <div class="absolute inset-0 pointer-events-none opacity-40 select-none overflow-hidden" aria-hidden="true">
-        <div class="absolute top-12 right-[5%] font-display text-[15rem] md:text-[20rem] font-bold text-bond-300/40 select-none leading-none">H</div>
+        <div class="absolute top-12 right-[5%] font-serif text-[15rem] md:text-[20rem] font-bold text-bond-300/40 select-none leading-none">H</div>
       </div>
 
       <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -567,7 +569,7 @@
                 <!-- Portada en pantalla: Nahual (ocupa todo el alto disponible) -->
                 <div class="flex-1 min-h-0 py-3 flex items-center justify-center">
                   <picture class="h-full">
-                    <source srcset="./books/portada-nahual.webp" type="image/webp">
+                    <source srcset="./books/portada-nahual-260.webp 260w, ./books/portada-nahual.webp 500w" sizes="180px" type="image/webp">
                     <img
                       src="./books/portada-nahual.jpg"
                       alt="Portada de Nahual de Luis Armando Rosado en Huapango +reads"
@@ -705,7 +707,7 @@
                 aria-label="Abrir detalles de Nahual por Luis Armando Rosado"
               >
                 <picture>
-                  <source srcset="./books/portada-nahual.webp" type="image/webp">
+                  <source srcset="./books/portada-nahual-260.webp 260w, ./books/portada-nahual.webp 500w" sizes="(min-width: 1280px) 246px, (min-width: 1024px) 21vw, (min-width: 640px) 44vw, 88vw" type="image/webp">
                   <img 
                     src="./books/portada-nahual.jpg" 
                     alt="Portada oficial de Nahual por Luis Armando Rosado" 
@@ -746,7 +748,7 @@
                 aria-label="Abrir detalles de Terregal por Eduardo Serrato y Luis Armando Rosado"
               >
                 <picture>
-                  <source srcset="./books/portada-terregal.webp" type="image/webp">
+                  <source srcset="./books/portada-terregal-260.webp 260w, ./books/portada-terregal.webp 500w" sizes="(min-width: 1280px) 246px, (min-width: 1024px) 21vw, (min-width: 640px) 44vw, 88vw" type="image/webp">
                   <img 
                     src="./books/portada-terregal.jpg" 
                     alt="Portada oficial de Terregal por Eduardo Serrato y Luis Armando Rosado" 
@@ -787,7 +789,7 @@
                 aria-label="Abrir detalles de Todo lo que puedas imaginar por Vanessa Aranda"
               >
                 <picture>
-                  <source srcset="./books/portada-todo-lo-que-puedas-imaginar.webp" type="image/webp">
+                  <source srcset="./books/portada-todo-lo-que-puedas-imaginar-260.webp 260w, ./books/portada-todo-lo-que-puedas-imaginar.webp 500w" sizes="(min-width: 1280px) 246px, (min-width: 1024px) 21vw, (min-width: 640px) 44vw, 88vw" type="image/webp">
                   <img 
                     src="./books/portada-todo-lo-que-puedas-imaginar.jpg" 
                     alt="Portada oficial de Todo lo que puedas imaginar por Vanessa Aranda" 
@@ -828,7 +830,7 @@
                 aria-label="Abrir detalles de Renacer en piel del tiempo por Ángelus"
               >
                 <picture>
-                  <source srcset="./books/portada-renacer-en-piel-del-tiempo.webp" type="image/webp">
+                  <source srcset="./books/portada-renacer-en-piel-del-tiempo-260.webp 260w, ./books/portada-renacer-en-piel-del-tiempo.webp 500w" sizes="(min-width: 1280px) 246px, (min-width: 1024px) 21vw, (min-width: 640px) 44vw, 88vw" type="image/webp">
                   <img 
                     src="./books/portada-renacer-en-piel-del-tiempo.jpg" 
                     alt="Portada oficial de Renacer en piel del tiempo por Ángelus" 
@@ -1186,29 +1188,21 @@
               <svg class="w-4 h-4 text-terregal-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
               <a href="tel:+528994112236" class="hover:text-bond-50 transition-colors">(52) 899 411-2236</a>
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-terregal-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-              <a href="https://editorialhuapango.com" target="_blank" rel="noopener noreferrer" class="hover:text-bond-50 transition-colors">editorialhuapango.com</a>
-            </li>
           </ul>
 
           <!-- Redes Sociales -->
           <div class="pt-4 flex items-center gap-4 text-bond-300">
             <!-- Instagram -->
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Editorial Huapango" class="w-8 h-8 rounded bg-carbon-800 flex items-center justify-center hover:bg-terregal-600 hover:text-white transition-colors focus:outline-none">
+            <a href="https://www.instagram.com/editorial_huapango/" target="_blank" rel="noopener noreferrer me" aria-label="Instagram de Editorial Huapango" class="w-8 h-8 rounded bg-carbon-800 flex items-center justify-center hover:bg-terregal-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-terregal-500">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke-width="2"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"></line></svg>
             </a>
             <!-- Facebook -->
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Editorial Huapango" class="w-8 h-8 rounded bg-carbon-800 flex items-center justify-center hover:bg-terregal-600 hover:text-white transition-colors focus:outline-none">
+            <a href="https://www.facebook.com/p/Editorial-Huapango-61581337876943/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook de Editorial Huapango" class="w-8 h-8 rounded bg-carbon-800 flex items-center justify-center hover:bg-terregal-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-terregal-500">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z"></path></svg>
             </a>
-            <!-- X / Twitter -->
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter de Editorial Huapango" class="w-8 h-8 rounded bg-carbon-800 flex items-center justify-center hover:bg-terregal-600 hover:text-white transition-colors focus:outline-none">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-            </a>
-            <!-- Spotify Podcast -->
-            <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Spotify Podcast Editorial Huapango" class="w-8 h-8 rounded bg-carbon-800 flex items-center justify-center hover:bg-terregal-600 hover:text-white transition-colors focus:outline-none">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.306c-.215.353-.674.464-1.026.25-2.812-1.718-6.353-2.107-10.523-1.155-.403.092-.803-.162-.895-.565-.092-.403.162-.803.565-.895 4.565-1.042 8.49-.603 11.63 1.338.352.216.463.675.249 1.027zm1.465-3.256c-.27.44-.847.579-1.287.31-3.22-1.979-8.127-2.551-11.936-1.394-.498.151-1.029-.134-1.18-.633-.151-.498.134-1.029.633-1.18 4.364-1.324 9.774-.684 13.46 1.58.44.27.579.847.31 1.317zm.126-3.39c-3.86-2.292-10.228-2.503-13.896-1.39-.592.18-1.223-.158-1.403-.75-.18-.592.158-1.223.75-1.403 4.22-1.282 11.258-1.036 15.702 1.602.533.316.707 1.008.391 1.541-.316.533-1.008.707-1.544.39z"></path></svg>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@EditorialHuapangoOficial" target="_blank" rel="noopener noreferrer me" aria-label="Canal de YouTube de Editorial Huapango" class="w-8 h-8 rounded bg-carbon-800 flex items-center justify-center hover:bg-terregal-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-terregal-500">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
           </div>
         </div>
@@ -1274,7 +1268,7 @@
             rel="noopener noreferrer" 
             class="mt-3 w-full py-2 bg-carbon-800 hover:bg-carbon-900 text-bond-100 text-[10px] uppercase font-mono tracking-wider rounded-sm flex items-center justify-center gap-1.5 transition-colors"
           >
-            <svg class="w-3.5 h-3.5 text-terregal-500" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <svg class="w-3.5 h-3.5 text-terregal-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             Ver Presentación
           </a>
         </div>

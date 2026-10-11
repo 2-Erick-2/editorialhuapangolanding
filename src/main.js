@@ -162,6 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBuyLink = document.getElementById('modalBuyLink');
   const modalVideoLink = document.getElementById('modalVideoLink');
 
+  let lastFocused = null;
+
   function openBookModal(bookKey) {
     const data = CATALOG[bookKey];
     if (!data || !modalBackdrop) return;
@@ -201,14 +203,35 @@ document.addEventListener('DOMContentLoaded', () => {
       modalBuyLink.href = data.mlUrl;
     }
 
+    lastFocused = document.activeElement;
     modalBackdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (modalCloseBtn) modalCloseBtn.focus();
   }
 
   function closeBookModal() {
     if (!modalBackdrop) return;
     modalBackdrop.classList.remove('open');
     document.body.style.overflow = '';
+    // Devuelve el foco al elemento que abrió la ficha
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  // Mantiene el foco del teclado dentro de la ficha mientras está abierta
+  function trapFocus(e) {
+    if (e.key !== 'Tab' || !modalBackdrop.classList.contains('open')) return;
+    const focusables = [...modalBackdrop.querySelectorAll('a[href], button:not([disabled])')]
+      .filter(el => !el.classList.contains('hidden'));
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 
   document.querySelectorAll('[data-book-target]').forEach(trigger => {
@@ -243,32 +266,23 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
         closeBookModal();
       }
+      trapFocus(e);
     });
   }
 
-  // 5. Active Header Navigation Highlighting on Scroll
-  const sections = document.querySelectorAll('section[id]');
+  // 5. Resalta en el menú la sección visible (sin leer posiciones en cada scroll)
   const navLinks = document.querySelectorAll('header nav a[href^="#"]');
-
-  window.addEventListener('scroll', () => {
-    let currentId = '';
-    const scrollPos = window.scrollY + 120;
-
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      if (scrollPos >= top && scrollPos < top + height) {
-        currentId = sec.getAttribute('id');
-      }
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const currentId = entry.target.id;
+      navLinks.forEach(link => {
+        const isCurrent = link.getAttribute('href') === `#${currentId}`;
+        link.classList.toggle('text-terregal-600', isCurrent);
+        link.classList.toggle('font-bold', isCurrent);
+      });
     });
+  }, { rootMargin: '-45% 0px -50% 0px' });
 
-    navLinks.forEach(link => {
-      const targetId = link.getAttribute('href').replace('#', '');
-      if (targetId === currentId) {
-        link.classList.add('text-terregal-600', 'font-bold');
-      } else {
-        link.classList.remove('text-terregal-600', 'font-bold');
-      }
-    });
-  }, { passive: true });
+  document.querySelectorAll('section[id], footer[id]').forEach(sec => sectionObserver.observe(sec));
 });

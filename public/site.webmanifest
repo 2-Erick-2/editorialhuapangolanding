@@ -2,6 +2,7 @@
   "name": "Editorial Huapango",
   "short_name": "Huapango",
   "description": "Editorial mexicana independiente en Cd. Reynosa, Tamaulipas. Literatura de valor permanente y ecosistema cultural.",
+  "lang": "es-MX",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#FDFBF7",
@@ -11,6 +12,18 @@
       "src": "./favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
+    },
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

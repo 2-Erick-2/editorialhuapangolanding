@@ -1,3 +1,8 @@
+/* Fuentes autoalojadas (variables, solo se descarga el subset que usa la página) */
+@import '@fontsource-variable/newsreader/wght.css';
+@import '@fontsource-variable/newsreader/wght-italic.css';
+@import '@fontsource-variable/plus-jakarta-sans/wght.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +26,6 @@
 .book-spine-effect {
   position: relative;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
 }
 
 .book-spine-effect::before {
@@ -44,15 +48,14 @@
   background-color: #FDFBF7;
 }
 
-/* Animaciones suaves con hardware acceleration */
-.fade-up {
+/* Animación de entrada: solo oculta el contenido si el JS está activo (clase .js en <html>) */
+.js .fade-up {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
 }
 
-.fade-up.visible {
+.js .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -71,16 +74,19 @@
   animation: spin-slow 24s linear infinite;
 }
 
-/* Backdrop blur support and modal transitions */
+/* Modal: cerrado queda fuera del foco del teclado y de los lectores de pantalla (visibility) */
 .modal-backdrop {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 
 .modal-backdrop.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
+  transition: opacity 0.3s ease, visibility 0s;
 }
 
 .modal-content {
@@ -90,4 +96,24 @@
 
 .modal-backdrop.open .modal-content {
   transform: scale(1) translateY(0);
+}
+
+/* Respeta "reducir movimiento" del sistema operativo */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .fade-up {
+    opacity: 1;
+    transform: none;
+  }
 }

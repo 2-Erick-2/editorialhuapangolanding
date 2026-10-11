@@ -18,9 +18,11 @@ export default {
         carbon: {
           950: '#0C0C0B',
           900: '#141413', /* Gris carbón editorial */
+          850: '#1C1C1A',
           800: '#232321',
           700: '#3A3935',
           600: '#5A5953',
+          500: '#74736C',
           400: '#8E8D86',
           300: '#ABA9A0',
           200: '#C7C6BE',
@@ -42,9 +44,8 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Newsreader"', 'Georgia', 'Cambria', 'serif'],
-        display: ['"Cinzel"', '"Newsreader"', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Newsreader Variable"', 'Georgia', 'Cambria', 'serif'],
+        sans: ['"Plus Jakarta Sans Variable"', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       boxShadow: {

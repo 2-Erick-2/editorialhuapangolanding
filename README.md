@@ -5,41 +5,25 @@
 
 [![Deploy to GitHub Pages](https://github.com/2-Erick-2/editorialhuapangolanding/actions/workflows/deploy.yml/badge.svg)](https://github.com/2-Erick-2/editorialhuapangolanding/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Core Web Vitals](https://img.shields.io/badge/Core%20Web%20Vitals-100%2F100-success)](https://pagespeed.web.dev/)
 
 ---
 
-## ⚡ Rendimiento Instantáneo & Optimización Senior
+## ⚡ Rendimiento y SEO
 
-Esta landing page ha sido desarrollada desde cero aplicando los estándares más rigurosos de **rendimiento web (Core Web Vitals)** y **Search Engine Optimization (SEO)** técnico:
+Lighthouse sobre el build de producción (octubre 2026):
 
-1. **Cero Bloqueo de Renderizado (Zero Render-Blocking JS/CSS)**:
-   - Se reemplazó el script runtime de desarrollo de Tailwind CDN (~400KB) por un proceso de compilación y purga con **PostCSS + Tailwind CSS v3**.
-   - Bundle CSS resultante en producción: **~6.7 KB gzipped**.
-   - Bundle JS interactivo: **~2.6 KB gzipped**.
-   - Carga total del sitio: **< 26 KB gzipped**.
+| | Rendimiento | Accesibilidad | Buenas prácticas | SEO |
+|---|---|---|---|---|
+| Móvil | 96 | 100 | 100 | 100 |
+| Escritorio | 100 | 100 | 100 | 100 |
 
-2. **Core Web Vitals (CWV)**:
-   - **LCP (Largest Contentful Paint)**: Preconexión (`preconnect` y `dns-prefetch`) a fuentes tipográficas de Google Fonts, pre-carga de imagen de logotipo y jerarquía visual optimizada.
-   - **CLS (Cumulative Layout Shift = 0)**: Dimensiones fijas explícitas (`width` y `height`), contenedor de aspecto de portadas (`aspect-[2/3]`), evitando brincos visuales durante la carga.
-   - **FID / INP (Interaction to Next Paint)**: Código JavaScript vanilla reactivo sin frameworks pesados, con observadores pasivos (`IntersectionObserver`) y animaciones aceleradas por hardware (`will-change`, `transform`, `opacity`).
-
-3. **SEO Técnico y Datos Estructurados (JSON-LD)**:
-   - Marcado de esquema oficial según Schema.org:
-     - `@type: Organization` (Editorial Huapango, sede en Reynosa, dirección fiscal, teléfono, fundador Dr. Luis Armando Rosado Lara).
-     - `@type: WebSite` (URL canónica, idioma es-MX).
-     - `@type: ItemList` & `@type: Book` para cada uno de los títulos del catálogo (*Nahual*, *Terregal*, *Todo Lo Que Puedas Imaginar*, *Renacer en Piel del Tiempo*) con ISBN, formato, precios en MXN y disponibilidad.
-   - Metadatos completos: Open Graph (Facebook/WhatsApp/LinkedIn), Twitter Cards, Geotags (`geo.region: MX-TAM`, `geo.placename: Reynosa`), `sitemap.xml`, `robots.txt` y `site.webmanifest` para soporte PWA.
-
-4. **Accesibilidad (WAI-ARIA & a11y)**:
-   - Enlace directo *"Saltar al contenido principal"* para lectores de pantalla.
-   - Roles y atributos ARIA (`aria-expanded`, `aria-label`, `aria-hidden` en íconos decorativos, `role="dialog"` en modal accesible).
-   - Soporte total para navegación por teclado (tecla `Escape` para cerrar menús y modales).
-
-5. **Interacciones Enriquecidas**:
-   - Modal interactivo de detalle de libro con sinopsis completa, ficha técnica, cita del autor y botón dinámico para ordenar directamente por WhatsApp (`wa.me`).
-   - Menú móvil responsivo con animación de ícono hamburguesa.
-   - Indicador de sección activa en la barra de navegación superior sincronizado con el scroll.
+- **Fuentes autoalojadas** (`@fontsource-variable`, solo subset latino y precargadas): sin dependencia de Google Fonts.
+- **Imágenes**: portadas en WebP con `srcset` (260 y 500 px) y JPG de respaldo; logo vectorizado en SVG.
+- **CLS = 0**: todas las imágenes declaran `width`/`height` y proporción.
+- **JS vanilla** (~3 KB gzip) con `IntersectionObserver`; respeta `prefers-reduced-motion`.
+- **JSON-LD**: `Organization`, `WebSite` e `ItemList` de `Book` con portada, editorial y oferta enlazada a Mercado Libre.
+- **Open Graph / Twitter**: imagen 1200×630 (`public/og-image.jpg`).
+- **Accesibilidad**: ficha técnica con manejo y retención de foco, navegación completa por teclado.
 
 ---
 
@@ -48,7 +32,7 @@ Esta landing page ha sido desarrollada desde cero aplicando los estándares más
 - **Core**: HTML5 Semántico + JavaScript Vanilla (ES Modules)
 - **Estilos**: Tailwind CSS v3 + Vanilla CSS con variables de diseño personalizadas
 - **Empaquetador & Dev Server**: [Vite](https://vitejs.dev/)
-- **Hosting / CI-CD**: GitHub Actions + GitHub Pages / Vercel
+- **Hosting / CI-CD**: Cloudflare Pages (recomendado) o GitHub Actions + GitHub Pages
 
 ---
 
@@ -84,14 +68,26 @@ npm run preview
 
 ---
 
-## 🌐 Despliegue en Producción
+## 🌐 Dominio y despliegue
 
-El repositorio cuenta con un flujo automatizado de **GitHub Actions** en `.github/workflows/deploy.yml`. Cada vez que hagas `git push` a la rama `main`, la web se compilará y desplegará automáticamente en GitHub Pages.
+### URL del sitio (un solo lugar)
+La URL pública alimenta la URL canónica, Open Graph, JSON-LD, `robots.txt` y `sitemap.xml`
+(estos dos se generan en el build). Se define con la variable de entorno **`VITE_SITE_URL`**
+(sin `/` final). Si no existe, se usa el valor por defecto de `vite.config.js`.
 
-URL de GitHub Pages:  
+```bash
+VITE_SITE_URL=https://tudominio.com npm run build
+```
+
+### Cloudflare Pages (recomendado)
+1. Cloudflare → Workers & Pages → Create → Pages → conectar este repositorio de GitHub.
+2. Build command: `npm run build` · Output directory: `dist`.
+3. Variables de entorno: `VITE_SITE_URL` = dominio final (p. ej. `https://tudominio.com`).
+4. Custom domains → agregar el dominio. `public/_headers` aplica caché y encabezados de seguridad.
+
+### GitHub Pages
+`.github/workflows/deploy.yml` publica en cada `push` a `main`:
 **https://2-erick-2.github.io/editorialhuapangolanding/**
-
-También es 100% compatible con **Vercel**, **Netlify**, **Cloudflare Pages** o cualquier servidor Nginx/Apache.
 
 ---
 
