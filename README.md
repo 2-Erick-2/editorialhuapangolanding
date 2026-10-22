@@ -32,7 +32,7 @@ Lighthouse sobre el build de producción (octubre 2026):
 - **Core**: HTML5 Semántico + JavaScript Vanilla (ES Modules)
 - **Estilos**: Tailwind CSS v3 + Vanilla CSS con variables de diseño personalizadas
 - **Empaquetador & Dev Server**: [Vite](https://vitejs.dev/)
-- **Hosting / CI-CD**: Cloudflare Pages (recomendado) o GitHub Actions + GitHub Pages
+- **Hosting / CI-CD**: Vercel (producción) · GitHub Pages (respaldo manual)
 
 ---
 
@@ -70,24 +70,29 @@ npm run preview
 
 ## 🌐 Dominio y despliegue
 
+**Producción:** https://editorialhuapango.com.mx (Vercel)
+
 ### URL del sitio (un solo lugar)
 La URL pública alimenta la URL canónica, Open Graph, JSON-LD, `robots.txt` y `sitemap.xml`
-(estos dos se generan en el build). Se define con la variable de entorno **`VITE_SITE_URL`**
-(sin `/` final). Si no existe, se usa el valor por defecto de `vite.config.js`.
+(estos dos se generan en el build). Valor por defecto en `vite.config.js`
+(`DEFAULT_SITE_URL`); se puede sobrescribir con la variable de entorno **`VITE_SITE_URL`**.
 
-```bash
-VITE_SITE_URL=https://tudominio.com npm run build
-```
+### Vercel
+- `vercel.json` define build (`npm run build` → `dist`), caché inmutable para `/assets` y encabezados de seguridad.
+- Cada `push` a `main` despliega a producción; cada rama/PR genera una vista previa.
+- Dominio: `editorialhuapango.com.mx` como principal y `www` redirigido a él (Settings → Domains).
 
-### Cloudflare Pages (recomendado)
-1. Cloudflare → Workers & Pages → Create → Pages → conectar este repositorio de GitHub.
-2. Build command: `npm run build` · Output directory: `dist`.
-3. Variables de entorno: `VITE_SITE_URL` = dominio final (p. ej. `https://tudominio.com`).
-4. Custom domains → agregar el dominio. `public/_headers` aplica caché y encabezados de seguridad.
+### DNS (no cambiar nameservers)
+El correo usa **Zoho Mail** (registros MX/SPF/TXT en el DNS actual). Solo se editan estos registros
+en el panel del proveedor del dominio, con los valores que muestre Vercel:
 
-### GitHub Pages
-`.github/workflows/deploy.yml` publica en cada `push` a `main`:
-**https://2-erick-2.github.io/editorialhuapangolanding/**
+| Tipo | Nombre | Valor |
+|---|---|---|
+| A | `@` | IP que indique Vercel (p. ej. `76.76.21.21`) |
+| CNAME | `www` | CNAME del proyecto que indique Vercel |
+
+### GitHub Pages (respaldo)
+`.github/workflows/deploy.yml` ya no corre en cada push; se ejecuta manualmente desde Actions.
 
 ---
 

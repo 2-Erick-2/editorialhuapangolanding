@@ -5,7 +5,7 @@ import { defineConfig, loadEnv } from 'vite';
  * de entorno VITE_SITE_URL en el hosting. Alimenta canonical, Open Graph,
  * JSON-LD, robots.txt y sitemap.xml: al cambiar de dominio basta con editarla.
  */
-const DEFAULT_SITE_URL = 'https://2-erick-2.github.io/editorialhuapangolanding';
+const DEFAULT_SITE_URL = 'https://editorialhuapango.com.mx';
 
 function siteFiles(siteUrl) {
   return {
